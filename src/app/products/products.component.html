@@ -1,0 +1,27 @@
+<div class="p-3">
+  <ul class="nav nav-pills">
+    <li class="btn p-3 ms-1 btn-outline-info">Selected Products : {{selectedProducts()}}</li>
+    <li class="btn p-3 ms-1 btn-outline-info">Total  : {{total()}}</li>
+  </ul>
+  <table class="table">
+    <thead>
+     <tr>
+       <th>ID</th> <th>Name</th> <th>Price</th> <th>Selected</th>
+     </tr>
+    </thead>
+    <tbody>
+      @for (product of products(); track product.id){
+        <tr>
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          @if (product.selected){
+            <td><button (click)="select(product)" class="btn btn-success">Selected</button></td>
+          } @else {
+            <td><button (click)="select(product)" class="btn btn-danger">Not Selected</button></td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

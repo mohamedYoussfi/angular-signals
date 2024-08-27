@@ -1,0 +1,10 @@
+<div class="p-3">
+  <ul class="list-group">
+    <li class="list-group-item">Price : {{price}}</li>
+    <li class="list-group-item">Quantity : {{quantity()}}
+      <button (click)="decrement()" class="btn btn-success m-1">-</button>
+     <button (click)="increment()" class="btn btn-success m-1">+</button>
+    </li>
+    <li class="list-group-item">Total : {{total()}}</li>
+  </ul>
+</div>
